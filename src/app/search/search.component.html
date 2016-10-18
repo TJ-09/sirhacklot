@@ -1,0 +1,64 @@
+<div class="jumbotron">
+    <h1>Research your {{ victim }}</h1>
+    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    <p></p>
+</div>
+<!-- Add the logic here to check if the namme is {{name }} and then dispaly the correct links else show the dummy results - toaster hint that they have done the wrong thing -->
+<!-- the links take you  -->
+<div class="container">
+    <img src="/src/images/google.jpg" />
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <input #box type="text" class="form-control" (keyup.enter)="searchVar=box.value">
+                <span class="input-group-btn">
+                  <button class = "btn btn-default" type="button" (click)="searchVar=box.value">
+                     Search
+                  </button>
+               </span>
+            </div>
+        </div>
+    </form>
+</div>
+<!--
+This section and the two compenents are deprecated as the ngSwitch is in place :)
+<div class="container">
+    <p>Move on button to modal button which says I know I am a criminal</p>
+    <result-list>
+    </result-list>
+</div> -->
+<div class="row marketing" [ngSwitch]="searchVar">
+    <div class="col-lg-6" *ngSwitchCase="'Tony'">
+        <h4>Tony Stuff</h4>
+        <a routerLink="/twitter">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+        <h4>Tony Stuff2</h4>
+        <a routerLink="/search">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+        <h4>Tony Stuff3</h4>
+        <a href="#">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    </div>
+    <div class="col-lg-6" *ngSwitchCase="'Joe'">
+        <h4>Joe Stuff</h4>
+        <a href="#">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+        <h4>Joe Stuff2</h4>
+        <a href="#">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+        <h4>Joe Stuff3</h4>
+        <a href="#">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    </div>
+    <div class="col-lg-6" *ngSwitchCase="'Sarah'">
+        <h4>Sarah Stuff</h4>
+        <a href="#">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+        <h4>Sarah Stuff2</h4>
+        <a href="#">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+        <h4>Sarah Stuff3</h4>
+        <a href="#">linkaddresswitha.com</a>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    </div>
+</div>
