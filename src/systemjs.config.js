@@ -1,6 +1,6 @@
 (function(global) {
     var paths = {
-        'npm:': '/node_modules/'
+        'npm:': '/node_modules/',
     };
 
     var map = {
@@ -13,11 +13,12 @@
         '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
         '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
         'rxjs': 'npm:rxjs'
+            //     'ng2-sidebar': 'npm:ng2-sidebar/lib/index.js'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
-        app: { main: 'main.js',  defaultExtension: 'js' },
+        app: { main: 'main.js', defaultExtension: 'js' },
         rxjs: { defaultExtension: 'js' }
     };
 
