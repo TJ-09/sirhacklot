@@ -1,13 +1,21 @@
-<div>
-    <h3>Search Page</h3>
-    <div class="resource">
-        <h4>What can you find about {{  name }} ?</h4>
-        <form>
-            <input type="text" name="search" placeholder="elgoog">
-        </form>
-        <!-- add in the button in for the search -->
-        <div>
-            <!-- Add the logic here to check if the namme is {{name }} and then dispaly the correct links else show the  dummy results - toaster hint that they have done the wrong thing -->
-        </div>
-    </div>
-</div>
+<h4>Notes</h4>
+<div class="lines"></div>
+<ul id="List">
+    <li>Eat Breakfeast</li>
+    <li>Feed Pugsly, the cow</li>
+    <li>Sit Down</li>
+    <li>Eat lunch</li>
+    <li>Call mom</li>
+    <li>Tweet about feeding my cow, pugsly</li>
+    <li>Join a hangout in google+</li>
+    <li>Prepare Dinner</li>
+    <li>Eat Dinner</li>
+    <li>Get ready for bed</li>
+    <li>Go to bed</li>
+</ul>
+<!-- <a class="btn btn-lg btn-danger" role="button" (click)=clearNote()>Clear</a> -->
+<input #newNote (keyup.enter)="addNote(newNote.value)" (blur)="addNote(newNote.value); newNote.value='' ">
+<button (click)=addNote(newNote.value)>Add</button>
+<ul>
+    <li *ngFor="let note of notes">{{note}}</li>
+</ul>

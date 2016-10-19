@@ -10,7 +10,7 @@ import { FacebookComponent } from './facebook/facebook.component';
 import { InstaComponent } from './insta/insta.component';
 import { JailComponent } from './jail/jail.component';
 import { LinkinComponent } from './linkin/linkin.component';
-import { NotepadComponent } from './notepad/notepad.component';
+//import { NoteAppComponent } from './notepad/notepad.component';
 import { PetpageComponent } from './petpage/petpage.component';
 import { PhishComponent } from './phish/phish.component';
 import { SearchComponent } from './search/search.component';
@@ -18,6 +18,7 @@ import { StealComponent } from './steal/steal.component';
 import { SuccessComponent } from './success/success.component';
 import { TwitterComponent } from './twitter/twitter.component';
 import { DummyComponent } from './dummy/dummy.component';
+
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -30,14 +31,15 @@ const appRoutes: Routes = [
     { path: 'jail', component: JailComponent },
     { path: 'linkin', component: LinkinComponent },
     // not sure about this one? Think it will have to be embedded in the main app not as a separte page
-    { path: 'notepad', component: NotepadComponent },
+ //   { path: 'notepad', component: NoteAppComponent },
     { path: 'petpage', component: PetpageComponent },
     { path: 'phish', component: PhishComponent },
     { path: 'search', component: SearchComponent },
     { path: 'steal', component: StealComponent },
     { path: 'success', component: SuccessComponent },
     { path: 'twitter', component: TwitterComponent },
-    { path: 'dummy', component: DummyComponent }
+    { path: 'dummy', component: DummyComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 export const appRoutingProviders: any[] = [];
