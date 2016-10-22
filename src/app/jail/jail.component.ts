@@ -5,4 +5,12 @@ import { Component } from '@angular/core';
     templateUrl: './app/jail/jail.component.html'
 })
 
-export class JailComponent {}
+export class JailComponent {
+
+  _open: boolean = false;
+
+  _toggleSidebar() {
+    this._open = !this._open;
+  }
+
+}

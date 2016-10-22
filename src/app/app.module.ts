@@ -24,6 +24,7 @@ import { TwitterComponent } from './twitter/twitter.component';
 import { DummyComponent } from './dummy/dummy.component';
 //import { ResultItemComponent } from './result-item/result-item.component';
 //import { ResultListComponent } from './result-list/result-list.component';
+import { SidebarModule } from 'ng2-sidebar';
 
 
 
@@ -51,6 +52,7 @@ import { DummyComponent } from './dummy/dummy.component';
     imports: [
     BrowserModule,
     FormsModule,
+    SidebarModule,
     routing,
     ],
     providers: [appRoutingProviders],

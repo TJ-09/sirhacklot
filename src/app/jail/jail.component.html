@@ -13,3 +13,7 @@
         <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
     </div>
 </div>
+<button (click)="_toggleSidebar()">Toggle sidebar</button>
+<ng2-sidebar [(open)]="_open">
+    <a closeSidebar>Closes the sidebar</a>
+</ng2-sidebar>

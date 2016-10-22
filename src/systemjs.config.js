@@ -12,8 +12,8 @@
         '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
         '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
         '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-        'rxjs': 'npm:rxjs'
-            //     'ng2-sidebar': 'npm:ng2-sidebar/lib/index.js'
+        'rxjs': 'npm:rxjs',
+        'ng2-sidebar': 'npm:ng2-sidebar/lib/index.js'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
