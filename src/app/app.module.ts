@@ -25,6 +25,8 @@ import { DummyComponent } from './dummy/dummy.component';
 //import { ResultItemComponent } from './result-item/result-item.component';
 //import { ResultListComponent } from './result-list/result-list.component';
 import { SidebarModule } from 'ng2-sidebar';
+import { RootComponent } from './root/root.component';
+
 
 
 

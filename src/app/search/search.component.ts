@@ -10,4 +10,12 @@ import { CommonModule } from '@angular/common';
 export class SearchComponent {
 
 searchVar = '';
+
+
+    _open: boolean = false;
+
+  _toggleSidebar() {
+    this._open = !this._open;
+  }
+
 }
