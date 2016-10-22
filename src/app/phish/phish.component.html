@@ -1,13 +1,31 @@
-<div>
-    <h3>Search Page</h3>
-    <div class="resource">
-        <h4>What can you find about {{  name }} ?</h4>
-        <form>
-            <input type="text" name="search" placeholder="elgoog">
-        </form>
-        <!-- add in the button in for the search -->
-        <div>
-            <!-- Add the logic here to check if the namme is {{name }} and then dispaly the correct links else show the  dummy results - toaster hint that they have done the wrong thing -->
+<div class="jumbotron">
+    <h1>Contruct a Phishing email</h1>
+    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+</div>
+<div class="well well-lg" [ngSwitch]="steps">
+    <p-progressBar [value]="value5"></p-progressBar>
+    <div class="row marketing" *ngSwitchCase="1">
+        <h3 class="first">Single</h3>
+        <p-dropdown [options]="options1" [(ngModel)]="selectedOption1"></p-dropdown>
+        <p>Selected City: {{selectedOption1 ? selectedOption1.name : 'none'}}</p>
+        <button class="btn btn-default btn-block" type="button" (click)="countUp()">Next <i class="fa fa-forward fa-lg"></i></button>
+    </div>
+    <div class="row marketing" *ngSwitchCase="2">
+        <h3 class="first">Single</h3>
+        <p-dropdown [options]="options2" [(ngModel)]="selectedOption2"></p-dropdown>
+        <p>Selected City: {{selectedOption2 ? selectedOption2.name : 'none'}}</p>
+        <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group btn-group-justified" role="group">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-block" type="button" (click)="countDown()"><i class="fa fa-backward fa-lg"></i> Back </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-block" type="button" (click)="countUp()">Next <i class="fa fa-forward fa-lg"></i></button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<p>Hi Jo, Just a reminder that it’s time to bring your puppy in for its next set on injections. Please click here (insert hyperlink) to book your next appointment with the Vet. Looking forward to seeing you and you’re dog soon! Thanks Nettles Veterinary Practice.
+</p>
+{{selectedOption1 ? selectedOption1.name : 'none'}} {{selectedOption2 ? selectedOption2.name : 'none'}}
