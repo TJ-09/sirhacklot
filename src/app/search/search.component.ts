@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'search',
-    templateUrl: './app/search/search.component.html'
+    templateUrl: './app/search/search.component.html',
 })
 
 export class SearchComponent {

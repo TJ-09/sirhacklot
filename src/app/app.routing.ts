@@ -10,7 +10,6 @@ import { FacebookComponent } from './facebook/facebook.component';
 import { InstaComponent } from './insta/insta.component';
 import { JailComponent } from './jail/jail.component';
 import { LinkinComponent } from './linkin/linkin.component';
-//import { NoteAppComponent } from './notepad/notepad.component';
 import { PetpageComponent } from './petpage/petpage.component';
 import { PhishComponent } from './phish/phish.component';
 import { SearchComponent } from './search/search.component';

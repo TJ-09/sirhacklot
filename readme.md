@@ -29,11 +29,11 @@ $ npm run e2e
 This project is supported by a number of open source items that are listed below.
 
 > Generated with [generator-angular2-typescript](https://github.com/shibbir/generator-angular2-typescript) version 0.10.1.
-> Utilising the Arkon's [Ng2 Sidebar](https://github.com/arkon/ng2-sidebar)
-> Angular 2
-> Typescript
-> Bootstrap
-> Work in progress
+> Utilising the Arkon's [Ng2 Sidebar](https://github.com/arkon/ng2-sidebar).
+> Angular 2.
+> Typescript.
+> Bootstrap.
+> Work in progress.
 
 
 ## License
