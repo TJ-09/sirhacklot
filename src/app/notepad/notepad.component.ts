@@ -6,11 +6,13 @@ import { Component } from '@angular/core';
 //	encapsulation: ViewEncapsulation.Native,  // CSS Encapsulation for this component
 //styleUrls: ['./app/notepad/notepad.css'],
 	templateUrl: './app/notepad/notepad.component.html'
+
 })
 
 export class NoteAppComponent {
 
-  notes = ['Sample Note'];
+ notes = [];
+
   addNote(newNote: string) {
     if (newNote) {
       this.notes.push(newNote);

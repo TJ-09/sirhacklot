@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import {ProgressBarModule} from 'primeng/primeng';
 import {DropdownModule} from 'primeng/primeng';
 import {SelectItem} from 'primeng/primeng';
-
-
+import {LocalStorageService} from 'ng2-webstorage';
+import {Message} from 'primeng/primeng';
+import {GrowlModule} from 'primeng/primeng';
 
 
 @Component({
@@ -38,7 +39,13 @@ steps:number = 1;
 //progress bar
     value5: number =50;
 
+//for the char name
+character;
 
+// this gets the name when the view loads
+   ngOnInit() {
+      this.character = this.storage.retrieve('Char');
+}
 
 //First Selection Box
     options1: SelectItem[];
@@ -49,7 +56,7 @@ steps:number = 1;
     selectedOption2: string;
 
     //push all the data in the arrays
- constructor() {
+ constructor(private storage:LocalStorageService) {
         this.options1 = [];
         this.options1.push({label:'Select City', value:null});
         this.options1.push({label:'New York', value:{id:1, name: 'New York', code: 'NY'}});
@@ -67,4 +74,21 @@ steps:number = 1;
         this.options2.push({label:'s', value:{id:5, name: 'Paris', code: 'PRS'}});
     }
 
+//this is for the notepad to open and close
+
+  _open: boolean = false;
+
+  _toggleSidebar() {
+    this._open = !this._open;
+  }
+
+
+//below is for the toaster
+
+msgs: Message[] = [];
+
+    showWarn() {
+        this.msgs = [];
+        this.msgs.push({severity:'warn', summary:"You Don't want to do that!", detail:"That is our evil link! You don't want to steal your own password!"});
+    }
 }

@@ -1,9 +1,15 @@
+<p-growl [value]="msgs" sticky="sticky"></p-growl>
+<ng2-sidebar [(open)]="_open">
+    <button type="button" class="close" aria-hidden="true" closeSidebar>&times;</button>
+    <notepad></notepad>
+</ng2-sidebar>
 <div class="jumbotron">
     <h1>Contruct a Phishing email</h1>
-    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    <p class="lead">Now we must construct an email to trick {{ character }} so that they click on our evil link which will capture their password!</p>
+    <p>Fill out the boxes below using the information that you have found from your research that you think will work on {{ character }}.</p>
 </div>
-<p>Looking forward to seeing you and you’re dog soon! Thanks Nettles Veterinary Practice.
-</p>
+<button type="button" class="btn btn-info btn-lg btn-block" (click)="_toggleSidebar()">Open Notepad</button>
+<hr />
 <div>
     <div class="well">
         <div class="row">
@@ -35,7 +41,7 @@
                             <p style="margin-bottom: 15px;">Just a reminder that it’s time to bring your ANIMALTYPE ANIMALNAME in for their next set on injections.</p>
                             <p style="margin-bottom: 15px;">Please click the button below to use our online system book your next appointment with VETNAME.</p>
                             <p></p>
-                            <button type="button" class="btn btn-success">Book Here</button>
+                            <button type="button" class="btn btn-success" (click)="showWarn()">Book Here</button>
                             <p></p>
                             <p style="margin-bottom: 15px;">Looking forward to seeing you and ANIMALNAME soon!</p>
                             <p style="margin-bottom: 15px;">VETNAME</p>
