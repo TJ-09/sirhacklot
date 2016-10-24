@@ -2,6 +2,53 @@
     <h1>Contruct a Phishing email</h1>
     <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
 </div>
+<p>Looking forward to seeing you and you’re dog soon! Thanks Nettles Veterinary Practice.
+</p>
+<div>
+    <div class="well">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/src/images/placeholder.png" width="180" />
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <address> <strong>Twitter, Inc.</strong>
+                    <br>795 Folsom Ave, Suite 600
+                    <br> San Francisco, CA 94107
+                    <br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                    <br>
+                    <br> <strong>Full Name</strong>
+                    <br> <a href="mailto:#">first.last@example.com</a> </address>
+            </div>
+        </div>
+        <div class="row">
+            <hr />
+        </div>
+        <div class="row">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; ">
+                <tbody>
+                    <tr>
+                        <td>
+                            <p style="margin-bottom: 15px;">Hi NAME,</p>
+                            <p style="margin-bottom: 15px;">Just a reminder that it’s time to bring your ANIMALTYPE ANIMALNAME in for their next set on injections.</p>
+                            <p style="margin-bottom: 15px;">Please click the button below to use our online system book your next appointment with VETNAME.</p>
+                            <p></p>
+                            <button type="button" class="btn btn-success">Book Here</button>
+                            <p></p>
+                            <p style="margin-bottom: 15px;">Looking forward to seeing you and ANIMALNAME soon!</p>
+                            <p style="margin-bottom: 15px;">VETNAME</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>
+{{selectedOption1 ? selectedOption1.name : 'none'}} {{selectedOption2 ? selectedOption2.name : 'none'}}
 <div class="well well-lg" [ngSwitch]="steps">
     <p-progressBar [value]="value5"></p-progressBar>
     <div class="row marketing" *ngSwitchCase="1">
@@ -26,6 +73,3 @@
         </div>
     </div>
 </div>
-<p>Hi Jo, Just a reminder that it’s time to bring your puppy in for its next set on injections. Please click here (insert hyperlink) to book your next appointment with the Vet. Looking forward to seeing you and you’re dog soon! Thanks Nettles Veterinary Practice.
-</p>
-{{selectedOption1 ? selectedOption1.name : 'none'}} {{selectedOption2 ? selectedOption2.name : 'none'}}

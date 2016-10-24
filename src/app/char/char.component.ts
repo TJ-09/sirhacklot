@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
     templateUrl: './app/char/char.component.html'
 })
 
-export class CharComponent {}
+export class CharComponent {
+
+
+}

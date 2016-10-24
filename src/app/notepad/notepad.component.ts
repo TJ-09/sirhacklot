@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 
 export class NoteAppComponent {
 
-  notes = [];
+  notes = ['Sample Note'];
   addNote(newNote: string) {
     if (newNote) {
       this.notes.push(newNote);
