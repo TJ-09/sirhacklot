@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Result } from '../result-list/result-list.model'
 import { CommonModule } from '@angular/common';
+import {LocalStorageService} from 'ng2-webstorage';
+
 
 @Component({
     selector: 'search',
@@ -11,11 +12,16 @@ export class SearchComponent {
 
 searchVar = '';
 
-
     _open: boolean = false;
 
   _toggleSidebar() {
     this._open = !this._open;
   }
 
+character;
+    constructor(private storage:LocalStorageService) {}
+
+   ngOnInit() {
+      this.character = this.storage.retrieve('Char');
+}
 }

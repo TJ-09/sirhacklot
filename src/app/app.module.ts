@@ -25,10 +25,13 @@ import { DummyComponent } from './dummy/dummy.component';
 //import { ResultItemComponent } from './result-item/result-item.component';
 //import { ResultListComponent } from './result-list/result-list.component';
 import { SidebarModule } from 'ng2-sidebar';
-import { RootComponent } from './root/root.component';
+//import { RootComponent } from './root/root.component';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import {ProgressBarModule} from 'primeng/primeng';
 import {DropdownModule} from 'primeng/primeng';
+import {Ng2Webstorage} from 'ng2-webstorage';
+import {GrowlModule} from 'primeng/primeng';
+import {Message} from 'primeng/primeng';
 
 
 
@@ -58,7 +61,8 @@ import {DropdownModule} from 'primeng/primeng';
     FormsModule,
     SidebarModule,
     Ng2BootstrapModule,
-    ProgressBarModule,DropdownModule,
+    Ng2Webstorage,
+    ProgressBarModule,DropdownModule,GrowlModule,
     routing,
     ],
     providers: [appRoutingProviders],

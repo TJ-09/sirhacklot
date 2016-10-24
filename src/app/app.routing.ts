@@ -17,6 +17,7 @@ import { StealComponent } from './steal/steal.component';
 import { SuccessComponent } from './success/success.component';
 import { TwitterComponent } from './twitter/twitter.component';
 import { DummyComponent } from './dummy/dummy.component';
+import { RootService } from './root/root.service';
 
 
 const appRoutes: Routes = [

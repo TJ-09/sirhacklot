@@ -17,13 +17,15 @@
         'ng2-sidebar': 'npm:ng2-sidebar/lib/index.js',
         'moment': 'node_modules/moment/moment.js',
         'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
-        'primeng': 'node_modules/primeng'
+        'primeng': 'node_modules/primeng',
+        'ng2-webstorage': 'node_modules/ng2-webstorage'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         app: { main: 'main.js', defaultExtension: 'js' },
         rxjs: { defaultExtension: 'js' },
+        'ng2-webstorage': { main: 'bundles/core.umd.js', defaultExtension: 'js' },
         'primeng': { defaultExtension: 'js' }
     };
 
