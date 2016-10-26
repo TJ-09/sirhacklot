@@ -36,17 +36,25 @@ steps:number = 1;
  public vetname:string;
  public nastylink:string;
 
+
+// Set the addresses for the user to pick from
+       addresses = [
+        {label:'New York', value:{id:1, name: 'New York', code: 'NY'}},
+        {label:'New York', value:{id:1, name: 'New York', code: 'NY'}},
+        {label:'New York', value:{id:1, name: 'New York', code: 'NY'}}
+        ];
+
 //progress bar
     value5: number =50;
 
-//for the char name
+//for temp stprage of the char name
 character;
 
-// this gets the name when the view loads
+// this gets the name when the view loads from the local storage
    ngOnInit() {
       this.character = this.storage.retrieve('Char');
 }
-
+// set the variables for the data to be populated into
 //First Selection Box
     options1: SelectItem[];
     selectedOption1: string;
@@ -55,7 +63,15 @@ character;
     options2: SelectItem[];
     selectedOption2: string;
 
-    //push all the data in the arrays
+        //third Selection Box
+    options3: SelectItem[];
+    selectedOption3: string;
+
+        //forth Selection Box
+    options4: SelectItem[];
+    selectedOption4: string;
+
+    //push all the data in the arrays for the selectors
  constructor(private storage:LocalStorageService) {
         this.options1 = [];
         this.options1.push({label:'Select City', value:null});
@@ -72,6 +88,22 @@ character;
         this.options2.push({label:'on', value:{id:3, name: 'London', code: 'LDN'}});
         this.options2.push({label:'nbul', value:{id:4, name: 'Istanbul', code: 'IST'}});
         this.options2.push({label:'s', value:{id:5, name: 'Paris', code: 'PRS'}});
+
+                this.options3 = [];
+        this.options3.push({label:'Select City', value:null});
+        this.options3.push({label:'New York', value:{id:1, name: 'New York', code: 'NY'}});
+        this.options3.push({label:'Rome', value:{id:2, name: 'Rome', code: 'RM'}});
+        this.options3.push({label:'London', value:{id:3, name: 'London', code: 'LDN'}});
+        this.options3.push({label:'Istanbul', value:{id:4, name: 'Istanbul', code: 'IST'}});
+        this.options3.push({label:'Paris', value:{id:5, name: 'Paris', code: 'PRS'}});
+
+                this.options4 = [];
+        this.options4.push({label:'Select City', value:null});
+        this.options4.push({label:'New York', value:{id:1, name: 'New York', code: 'NY'}});
+        this.options4.push({label:'Rome', value:{id:2, name: 'Rome', code: 'RM'}});
+        this.options4.push({label:'London', value:{id:3, name: 'London', code: 'LDN'}});
+        this.options4.push({label:'Istanbul', value:{id:4, name: 'Istanbul', code: 'IST'}});
+        this.options4.push({label:'Paris', value:{id:5, name: 'Paris', code: 'PRS'}});
     }
 
 //this is for the notepad to open and close

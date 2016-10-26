@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {LocalStorageService} from 'ng2-webstorage';
 
 
@@ -8,8 +8,8 @@ import {LocalStorageService} from 'ng2-webstorage';
 })
 
 export class CharComponent {
- attribute;
-  constructor(private storage:LocalStorageService) {}
+
+   constructor(private storage:LocalStorageService) {}
 
     saveValueTony() {
       this.storage.store('Char', 'Tony Tonne');
@@ -20,9 +20,5 @@ export class CharComponent {
         saveValueJoe() {
       this.storage.store('Char', 'Joe Merlin');
     }
-
- ngOnInit() {
- 	this.storage.clear();
- }
 
 }

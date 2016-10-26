@@ -78,4 +78,31 @@
             </div>
         </div>
     </div>
+    <div class="row marketing" *ngSwitchCase="3">
+        <h3 class="first">Single</h3>
+        <p-dropdown [options]="options3" [(ngModel)]="selectedOption3"></p-dropdown>
+        <p>Selected City: {{selectedOption3 ? selectedOption3.name : 'none'}}</p>
+        <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group btn-group-justified" role="group">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-block" type="button" (click)="countDown()"><i class="fa fa-backward fa-lg"></i> Back </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-block" type="button" (click)="countUp()">Next <i class="fa fa-forward fa-lg"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row marketing" *ngSwitchCase="4">
+        <h3 class="first">Single</h3>
+        <p-dropdown [options]="options2" [(ngModel)]="selectedOption4"></p-dropdown>
+        <p>Selected City: {{selectedOption4 ? selectedOption4.name : 'none'}}</p>
+        <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group btn-group-justified" role="group">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-block" type="button" (click)="countDown()"><i class="fa fa-backward fa-lg"></i> Back </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

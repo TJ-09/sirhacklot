@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {LocalStorageService} from 'ng2-webstorage';
 
 @Component({
     selector: 'home',
@@ -6,4 +7,11 @@ import {Component} from '@angular/core';
 })
 
 export class HomeComponent {
+
+
+   constructor(private storage:LocalStorageService) {}
+
+	 ngOnInit() {
+ 	this.storage.clear();
+ }
 }
