@@ -34,6 +34,8 @@ import { GrowlModule } from 'primeng/primeng';
 import { Message } from 'primeng/primeng';
 //import { NoteService } from './notepad/notepad.service';
 import { ConfirmDialogModule,ConfirmationService} from 'primeng/primeng';
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 
 
@@ -64,7 +66,7 @@ import { ConfirmDialogModule,ConfirmationService} from 'primeng/primeng';
     SidebarModule,
     Ng2BootstrapModule,
     Ng2Webstorage,
-    ProgressBarModule,DropdownModule,GrowlModule,ConfirmDialogModule,
+    ProgressBarModule,DropdownModule,GrowlModule,ConfirmDialogModule,ModalModule,AlertModule,
     routing,
     ],
     providers: [appRoutingProviders,ConfirmationService],

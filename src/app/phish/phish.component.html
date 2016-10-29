@@ -3,6 +3,7 @@
     <button type="button" class="close" aria-hidden="true" closeSidebar>&times;</button>
     <notepad></notepad>
 </ng2-sidebar>
+<p-confirmDialog header="Are you sure you want to proceed?" icon="fa fa-warning" width="425"></p-confirmDialog>
 <div class="jumbotron">
     <h1>Contruct a Phishing email</h1>
     <p class="lead">Now we must construct an email to trick {{ character }} so that they click on our evil link which will capture their password!</p>
@@ -14,19 +15,20 @@
     <div class="well">
         <div class="row">
             <div class="col-md-4">
-                <img src="/src/images/placeholder.png" width="180" />
+                <img src="/src/images/petshop.JPG" width="180" />
             </div>
             <div class="col-md-4">
             </div>
             <div class="col-md-4">
-                <address> <strong>Twitter, Inc.</strong>
-                    <br>795 Folsom Ave, Suite 600
-                    <br> San Francisco, CA 94107
+                <address> <strong>First Pet, Inc.</strong>
+                    <br>{{selectedOption1 ? selectedOption1.line1 : '????'}}
+                    <br> {{selectedOption1 ? selectedOption1.line2 : '????'}}
+                    <br> {{selectedOption1 ? selectedOption1.name : '????'}}
                     <br>
-                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                    <abbr title="Phone">P:</abbr> {{selectedOption1 ? selectedOption1.phone : '????'}}
                     <br>
                     <br> <strong>Full Name</strong>
-                    <br> <a href="mailto:#">first.last@example.com</a> </address>
+                    <br> {{selectedOption4 ? selectedOption4 .name : '????'}}</address>
             </div>
         </div>
         <div class="row">
@@ -37,14 +39,14 @@
                 <tbody>
                     <tr>
                         <td>
-                            <p style="margin-bottom: 15px;">Hi NAME,</p>
-                            <p style="margin-bottom: 15px;">Just a reminder that it’s time to bring your ANIMALTYPE ANIMALNAME in for their next set on injections.</p>
-                            <p style="margin-bottom: 15px;">Please click the button below to use our online system book your next appointment with VETNAME.</p>
+                            <p style="margin-bottom: 15px;">Hi {{ character }},</p>
+                            <p style="margin-bottom: 15px;">Just a reminder that it’s time to bring your {{selectedOption2 ? selectedOption2.name : '????'}} {{selectedOption3 ? selectedOption3.name : '????'}} in for their next set on injections.</p>
+                            <p style="margin-bottom: 15px;">Please click the button below to use our online system book your next appointment with {{selectedOption4 ? selectedOption4.name : '????'}}.</p>
                             <p></p>
                             <button type="button" class="btn btn-success" (click)="showWarn()">Book Here</button>
                             <p></p>
-                            <p style="margin-bottom: 15px;">Looking forward to seeing you and ANIMALNAME soon!</p>
-                            <p style="margin-bottom: 15px;">VETNAME</p>
+                            <p style="margin-bottom: 15px;">Looking forward to seeing you and {{selectedOption3 ? selectedOption3.name : '????'}} soon!</p>
+                            <p style="margin-bottom: 15px;">{{selectedOption4 ? selectedOption4.name : '????'}}</p>
                         </td>
                     </tr>
                 </tbody>
@@ -54,19 +56,20 @@
         </div>
     </div>
 </div>
-{{selectedOption1 ? selectedOption1.name : 'none'}} {{selectedOption2 ? selectedOption2.name : 'none'}}
+<hr />
 <div class="well well-lg" [ngSwitch]="steps">
     <p-progressBar [value]="value5"></p-progressBar>
     <div class="row marketing" *ngSwitchCase="1">
-        <h3 class="first">Single</h3>
+        <h3 class="first">Where is the First Pet store {{ character }} visits?</h3>
+        <p> Select your choice in the box below. Don't forget to use your notes!</p>
         <p-dropdown [options]="options1" [(ngModel)]="selectedOption1"></p-dropdown>
-        <p>Selected City: {{selectedOption1 ? selectedOption1.name : 'none'}}</p>
+        <p>Selected address: {{selectedOption1 ? selectedOption1.name : 'none'}}</p>
         <button class="btn btn-default btn-block" type="button" (click)="countUp()">Next <i class="fa fa-forward fa-lg"></i></button>
     </div>
     <div class="row marketing" *ngSwitchCase="2">
-        <h3 class="first">Single</h3>
+        <h3 class="first">What animal does {{ character }} own?</h3>
         <p-dropdown [options]="options2" [(ngModel)]="selectedOption2"></p-dropdown>
-        <p>Selected City: {{selectedOption2 ? selectedOption2.name : 'none'}}</p>
+        <p>Selected animal: {{selectedOption2 ? selectedOption2.name : 'none'}}</p>
         <div class="btn-group btn-group-justified" role="group">
             <div class="btn-group btn-group-justified" role="group">
                 <div class="btn-group" role="group">
@@ -79,9 +82,9 @@
         </div>
     </div>
     <div class="row marketing" *ngSwitchCase="3">
-        <h3 class="first">Single</h3>
+        <h3 class="first">What was the name of {{ character }}'s pet?</h3>
         <p-dropdown [options]="options3" [(ngModel)]="selectedOption3"></p-dropdown>
-        <p>Selected City: {{selectedOption3 ? selectedOption3.name : 'none'}}</p>
+        <p>Selected name: {{selectedOption3 ? selectedOption3.name : 'none'}}</p>
         <div class="btn-group btn-group-justified" role="group">
             <div class="btn-group btn-group-justified" role="group">
                 <div class="btn-group" role="group">
@@ -94,9 +97,9 @@
         </div>
     </div>
     <div class="row marketing" *ngSwitchCase="4">
-        <h3 class="first">Single</h3>
-        <p-dropdown [options]="options2" [(ngModel)]="selectedOption4"></p-dropdown>
-        <p>Selected City: {{selectedOption4 ? selectedOption4.name : 'none'}}</p>
+        <h3 class="first">What was the Vet's name who looks after {{selectedOption3 ? selectedOption3.name : 'none'}} the {{selectedOption2 ? selectedOption2.name : 'none'}}? </h3>
+        <p-dropdown [options]="options4" [(ngModel)]="selectedOption4"></p-dropdown>
+        <p>Selected vet's name: {{selectedOption4 ? selectedOption4.name : 'none'}}</p>
         <div class="btn-group btn-group-justified" role="group">
             <div class="btn-group btn-group-justified" role="group">
                 <div class="btn-group" role="group">
