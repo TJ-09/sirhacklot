@@ -25,9 +25,11 @@ steps:number = 1;
 
       countUp() {
         this.steps++;
+        this.value5=(25*this.steps-25);
     }
           countDown() {
         this.steps--;
+        this.value5=(25*this.steps-25);
     }
 
  //below are the vars for the email selection
@@ -45,7 +47,7 @@ steps:number = 1;
         ];
 
 //progress bar
-    value5: number =50;
+    value5: number;
 
 //for temp stprage of the char name
 character;

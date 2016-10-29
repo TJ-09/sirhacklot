@@ -33,6 +33,7 @@ import { Ng2Webstorage } from 'ng2-webstorage';
 import { GrowlModule } from 'primeng/primeng';
 import { Message } from 'primeng/primeng';
 //import { NoteService } from './notepad/notepad.service';
+import { ConfirmDialogModule,ConfirmationService} from 'primeng/primeng';
 
 
 
@@ -63,10 +64,10 @@ import { Message } from 'primeng/primeng';
     SidebarModule,
     Ng2BootstrapModule,
     Ng2Webstorage,
-    ProgressBarModule,DropdownModule,GrowlModule,
+    ProgressBarModule,DropdownModule,GrowlModule,ConfirmDialogModule,
     routing,
     ],
-    providers: [appRoutingProviders],
+    providers: [appRoutingProviders,ConfirmationService],
     bootstrap: [AppComponent]
 })
 

@@ -4,7 +4,7 @@
         <form>
             <div class="form-group">
                 <div class="input-group">
-                    <input #newNote type="text" class="form-control" (keyup.enter)="addNote(newNote.value)" (blur)="addNote(newNote.value); newNote.value='' ">
+                    <input #newNote type="text" class="form-control" (keyup.enter)="addNote(newNote.value)" (blur)="addNote(newNote.value); newNote.value=''">
                     <button class="btn btn-info btn-block" btn-block type="button" (click)=addNote(newNote.value)>Add Note</button>
                 </div>
                 <ul class="list-group">

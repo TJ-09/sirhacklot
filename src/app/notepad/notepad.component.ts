@@ -36,10 +36,15 @@ export class NoteAppComponent implements OnInit {
 
  ngOnInit() {
 
-var pullednotes = JSON.parse(this.storage.retrieve('notes'));
+var pullednotes = JSON.parse(this.storage.retrieve('notes')),realnotes;;
+if (pullednotes != null){
+realnotes = JSON.parse(this.storage.retrieve('notes'))
+   this.notes = realnotes
+}
+else {
+realnotes = []
 
-       // this.pullednotes = this.storage.retrieve('boundValue');
-      this.notes = pullednotes
+}
    }
 
 }

@@ -1,12 +1,18 @@
+<p-growl [value]="info" sticky="sticky"></p-growl>
 <ng2-sidebar [(open)]="_open">
     <button type="button" class="close" aria-hidden="true" closeSidebar>&times;</button>
     <notepad></notepad>
 </ng2-sidebar>
+<p-confirmDialog header="Are you sure you want to proceed?" icon="fa fa-warning" width="425"></p-confirmDialog>
 <div class="jumbotron">
     <h1>Research {{ character }}</h1>
     <p class="lead">Use the google search below to find information about {{ character }}.</p>
     <p class="lead"> Open the notepad to make notes found in your research</p>
+    <p class="lead"> Once you have enough information on {{ character }} click the proceed button</p>
 </div>
+<hr />
+<button type="button" class="btn btn-success btn-lg btn-block" (click)="confirm1()">Proceed</button>
+<hr />
 <button type="button" class="btn btn-info btn-lg btn-block" (click)="_toggleSidebar()">Open Notepad</button>
 <hr />
 <div class="container">
@@ -57,5 +63,9 @@
         <h4>Sarah Stuff3</h4>
         <a href="#">linkaddresswitha.com</a>
         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    </div>
+    <div class="col-lg-6" *ngSwitchDefault>
+        <h4>No Results Found</h4>
+        <button type="button" class="btn btn-info" (click)="showInfo()">Click here for help</button>
     </div>
 </div>
