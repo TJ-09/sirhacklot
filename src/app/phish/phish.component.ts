@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, Renderer } from '@angular/core';
 import {ProgressBarModule} from 'primeng/primeng';
 import {DropdownModule} from 'primeng/primeng';
 import {SelectItem} from 'primeng/primeng';
@@ -7,6 +7,7 @@ import {Message} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/primeng';
 import {ConfirmDialogModule,ConfirmationService} from 'primeng/primeng';
 import { Router } from '@angular/router';
+
 
 @Component({
     selector: 'phish',
@@ -33,16 +34,19 @@ steps:number = 1;
         this.value5=(25*this.steps-25);
     }
 
-
 //progress bar
     value5: number;
 
 //for temp stprage of the char name
 character;
+characterId;
+
 
 // this gets the name when the view loads from the local storage
    ngOnInit() {
       this.character = this.storage.retrieve('Char');
+      this.characterId = this.storage.retrieve('CharId');
+
 }
 // set the variables for the data to be populated into
 //First Selection Box
@@ -62,7 +66,7 @@ character;
     selectedOption4: string;
 
     //push all the data in the arrays for the selectors
- constructor(private storage:LocalStorageService, private confirmationService: ConfirmationService, private router: Router) {
+ constructor(private storage:LocalStorageService, private confirmationService: ConfirmationService,private router: Router) {
         this.options1 = [];
         this.options1.push({label:'Select Address', value:null});
         this.options1.push({label:'Hogwarts', value:{id:1, name: 'Hogwarts', line1: 'Tower 25, Room 394', line2: 'Ross and Cromarty, DR01 6DF', phone:'01458 459-7435'}});
@@ -79,7 +83,7 @@ character;
         this.options2.push({label:'Dog', value:{id:4, name: 'Dog'}});
         this.options2.push({label:'Snail', value:{id:5, name: 'Snail'}});
 
-                this.options3 = [];
+        this.options3 = [];
         this.options3.push({label:'Select Name', value:null});
         this.options3.push({label:'Gandalf', value:{id:1, name: 'Gandalf'}});
         this.options3.push({label:'Snuffles', value:{id:2, name: 'Snuffles'}});
@@ -87,13 +91,15 @@ character;
         this.options3.push({label:'Barbell', value:{id:4, name: 'Barbell'}});
         this.options3.push({label:'Paul', value:{id:5, name: 'Paul'}});
 
-                this.options4 = [];
+        this.options4 = [];
         this.options4.push({label:"Select Vet's Name", value:null});
         this.options4.push({label:'Walden Macnair', value:{id:1, name: 'Walden Macnair'}});
         this.options4.push({label:'Elron of Rivendell', value:{id:2, name: 'Elron of Rivendell'}});
         this.options4.push({label:'Mr D. Vader', value:{id:3, name: 'Mr D. Vader'}});
         this.options4.push({label:'Noah Genesis', value:{id:4, name:'Noah Genesis'}});
         this.options4.push({label:'Stevo Steve', value:{id:5, name: 'Stevo Steve'}});
+
+
     }
 
 //this is for the notepad to open and close
@@ -105,21 +111,83 @@ character;
   }
 
 //to confirm if you want to move on
-    confirm1() {
+//variable so it is public
+combined; string;
+    confirm2() {
         this.confirmationService.confirm({
             message: 'Are you sure you are happy with your phishing email above?',
             accept: () => {
-           this.router.navigate(['/success']);
+var  choice1 = JSON.stringify(this.selectedOption1);
+var  choice2 = JSON.stringify(this.selectedOption2);
+var  choice3 = JSON.stringify(this.selectedOption3);
+var  choice4 = JSON.stringify(this.selectedOption4);
+var choice1p = JSON.parse(choice1);
+var choice2p = JSON.parse(choice2);
+var choice3p = JSON.parse(choice2);
+var choice4p = JSON.parse(choice2);
+
+this.combined = (""+ this.characterId + choice1p.id + choice2p.id + choice3p.id +choice4p.id);
+console.log(this.combined)
+        this.steps++;
+        this.value5=(25*this.steps-25);
             }
         });
     }
 
 //below is for the toaster
-
 msgs: Message[] = [];
 
     showWarn() {
         this.msgs = [];
         this.msgs.push({severity:'warn', summary:"You Don't want to do that!", detail:"That is our evil link! You don't want to steal your own password!"});
     }
+
+
+   checkPhish() {
+// check combined against know success
+if (this.combined === '15241' || this.combined === '21413' || this.combined === '32152'){
+        this.router.navigate(['/success']);
+}
+else {
+            this.router.navigate(['/jail']);
+}
+
+    }
+
+
+  //get diagnostic() { return JSON.stringify(this.selectedOption1); }
+
+
+  buttonState1() {
+      var option1 = JSON.stringify(this.selectedOption1);
+      if(option1 == null || option1 == 'null') {
+       return true
+      }
+   return false
+  }
+    buttonState2() {
+      var option2 = JSON.stringify(this.selectedOption2);
+      if(option2 == null || option2 == 'null') {
+       return true
+      }
+   return false
+  }
+
+  buttonState3() {
+      var option3 = JSON.stringify(this.selectedOption3);
+      if(option3 == null || option3 == 'null') {
+       return true
+      }
+   return false
+  }
+  buttonState4() {
+      var option4 = JSON.stringify(this.selectedOption4);
+      if(option4 == null || option4 == 'null') {
+       return true
+      }
+   return false
+  }
+
+
+
 }

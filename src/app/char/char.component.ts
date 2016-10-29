@@ -13,12 +13,15 @@ export class CharComponent {
 
     saveValueTony() {
       this.storage.store('Char', 'Tony Tonne');
+      this.storage.store('CharId', '1');
     }
         saveValueSarah() {
       this.storage.store('Char', 'Sarah Gabriel');
+         this.storage.store('CharId', '3');
     }
         saveValueJoe() {
       this.storage.store('Char', 'Joe Merlin');
+         this.storage.store('CharId', '2');
     }
 
 }
