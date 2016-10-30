@@ -111,23 +111,22 @@ characterId;
   }
 
 //to confirm if you want to move on
-//variable so it is public
+//variable so it is public for the below method
 combined; string;
     confirm2() {
         this.confirmationService.confirm({
             message: 'Are you sure you are happy with your phishing email above?',
             accept: () => {
-var  choice1 = JSON.stringify(this.selectedOption1);
-var  choice2 = JSON.stringify(this.selectedOption2);
-var  choice3 = JSON.stringify(this.selectedOption3);
-var  choice4 = JSON.stringify(this.selectedOption4);
-var choice1p = JSON.parse(choice1);
-var choice2p = JSON.parse(choice2);
-var choice3p = JSON.parse(choice2);
-var choice4p = JSON.parse(choice2);
 
-this.combined = (""+ this.characterId + choice1p.id + choice2p.id + choice3p.id +choice4p.id);
-console.log(this.combined)
+        var  choice1 = JSON.stringify(this.selectedOption1);
+        var  choice2 = JSON.stringify(this.selectedOption2);
+        var  choice3 = JSON.stringify(this.selectedOption3);
+        var  choice4 = JSON.stringify(this.selectedOption4);
+        var choice1p = JSON.parse(choice1);
+        var choice2p = JSON.parse(choice2);
+        var choice3p = JSON.parse(choice3);
+        var choice4p = JSON.parse(choice4);
+        this.combined = (""+ this.characterId + choice1p.id + choice2p.id + choice3p.id +choice4p.id);
         this.steps++;
         this.value5=(25*this.steps-25);
             }
@@ -144,7 +143,7 @@ msgs: Message[] = [];
 
 
    checkPhish() {
-// check combined against know success
+// check combined against know success criteria for each character then go to either jail or success
 if (this.combined === '15241' || this.combined === '21413' || this.combined === '32152'){
         this.router.navigate(['/success']);
 }
@@ -155,9 +154,8 @@ else {
     }
 
 
-  //get diagnostic() { return JSON.stringify(this.selectedOption1); }
 
-
+//these are for the button states to check if it is filled out (not very pretty)
   buttonState1() {
       var option1 = JSON.stringify(this.selectedOption1);
       if(option1 == null || option1 == 'null') {

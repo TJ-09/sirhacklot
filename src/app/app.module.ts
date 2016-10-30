@@ -6,7 +6,6 @@ import { routing, appRoutingProviders } from './app.routing';
 
 // the below are the pages that we will cycle the users through
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { AdviceComponent } from './advice/advice.component';
 import { BankComponent } from './bank/bank.component';
 import { CharComponent } from './char/char.component';
@@ -15,7 +14,6 @@ import { InstaComponent } from './insta/insta.component';
 import { JailComponent } from './jail/jail.component';
 import { LinkinComponent } from './linkin/linkin.component';
 import { NoteAppComponent } from './notepad/notepad.component';
-import { PetpageComponent } from './petpage/petpage.component';
 import { PhishComponent } from './phish/phish.component';
 import { SearchComponent } from './search/search.component';
 import { StealComponent } from './steal/steal.component';
@@ -43,7 +41,6 @@ import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
     declarations: [
         AppComponent,
         HomeComponent,
-        AboutComponent,
         AdviceComponent,
         BankComponent,
         CharComponent,
@@ -52,7 +49,6 @@ import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
         JailComponent,
         LinkinComponent,
         NoteAppComponent,
-        PetpageComponent,
         PhishComponent,
         SearchComponent,
         StealComponent,

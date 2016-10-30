@@ -1,3 +1,41 @@
-<div>
-    <h3>Success Page</h3>
+<p-growl [value]="info" sticky="sticky"></p-growl>
+<div class="jumbotron">
+    <h1>Success!</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <p class="lead">{{ character }} clicked the link in your phishing email and our evil code successful captured their password for us</p>
+        <p class="lead">Click the link below to see the password!</p>
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-body">
+        {{password}}
+    </div>
+</div>
+<button type="button" class="btn btn-info btn-block" (click)="showPassword()">Show Password</button>
+<hr />
+<div class="container">
+    <div class="row">
+        <p class="lead">Now that we have {{ character }}'s password we must choose where the best place to use it is.</p>
+        <p class="lead">Click on the organisation below to see if we can steal some money from {{character}}</p>
+    </div>
+    <hr />
+    <div class="row marketing">
+        <div class="col-md-4">
+            <h3 class="text-center">Luigi's Restrauant</h3>
+            <a (click)="addAlert()"> <img src="/src/images/luigi.JPG" height="160" /></a>
+            <a class="btn btn-primary center-block" role="button" (click)="addAlert()">Choose</a>
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-center">Narclays Bank</h3>
+            <a routerLink="/bank"> <img src="/src/images/narclays.JPG" height="160" /></a>
+            <a class="btn btn-primary center-block" role="button" routerLink="/bank">Choose</a>
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-center">Travel One</h3>
+            <a (click)="addAlert()"> <img src="/src/images/travel.JPG" height="160" /></a>
+            <a class="btn btn-primary center-block" role="button" (click)="addAlert()">Choose</a>
+        </div>
+    </div>
 </div>
