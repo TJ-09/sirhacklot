@@ -1,13 +1,37 @@
-<div>
-    <h3>Search Page</h3>
-    <div class="resource">
-        <h4>What can you find about {{  name }} ?</h4>
-        <form>
-            <input type="text" name="search" placeholder="elgoog">
-        </form>
-        <!-- add in the button in for the search -->
-        <div>
-            <!-- Add the logic here to check if the namme is {{name }} and then dispaly the correct links else show the  dummy results - toaster hint that they have done the wrong thing -->
+<div class="jumbotron">
+    <h1>Bingo!</h1>
+    <hr />
+    <a (click)="openAdvice()"><img class="img-responsive" src="/src/images/pot-of-gold.png" /></a>
+    <hr />
+    <p><a class="btn btn-lg btn-success btn-block" (click)="openAdvice()" role="button">STEAL ALL THE MONEY</a></p>
+</div>
+<button id="openAdviceBox" [hidden]="true" (click)="lgModal.show()">Large modal</button>
+<div bsModal #lgModal="bs-modal" class="modal fade" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">So what do you need to know to avoid {{character}}'s fate</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <ul>
+                        <li>Create a strong, unique password and change them often. Try to avoid reusing passwords on different accounts or sites</li>
+                        <li>Never click on links in emails, especially if you don’t know the sender. If you think the message might be valid, log into your account directly or got to the website, without using the supplied link</li>
+                        <li>Remain critical when opening attachments in e-mails or files downloaded from rogue emails or from the Internet</li>
+                        <li>Keep all applications up-to-date with the latest patches and updates</li>
+                        <li>Be careful what you download, and always ask questions about the site you are downloading from</li>
+                        <li>Install an antivirus solution and make sure you keep it updated</li>
+                    </ul>
+                </div>
+                <footer>
+                    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                        <a class="btn btn-lg btn-success btn-block" routerLink="" role="button">Start Again</a>
+                    </div>
+                </footer>
+            </div>
         </div>
     </div>
 </div>

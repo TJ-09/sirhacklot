@@ -24,18 +24,91 @@
     <div class="row marketing">
         <div class="col-md-4">
             <h3 class="text-center">Luigi's Restrauant</h3>
-            <a (click)="addAlert()"> <img src="/src/images/luigi.JPG" height="160" /></a>
-            <a class="btn btn-primary center-block" role="button" (click)="addAlert()">Choose</a>
+            <a (click)="addInfo()"> <img src="/src/images/luigi.JPG" height="160" /></a>
+            <a class="btn btn-primary center-block" role="button" (click)="addInfo()">Choose</a>
         </div>
         <div class="col-md-4">
             <h3 class="text-center">Narclays Bank</h3>
-            <a routerLink="/bank"> <img src="/src/images/narclays.JPG" height="160" /></a>
-            <a class="btn btn-primary center-block" role="button" routerLink="/bank">Choose</a>
+            <a (click)="openBank()"> <img src="/src/images/narclays.JPG" height="160" /></a>
+            <a class="btn btn-primary center-block" role="button" (click)="openBank()">Choose</a>
         </div>
         <div class="col-md-4">
             <h3 class="text-center">Travel One</h3>
-            <a (click)="addAlert()"> <img src="/src/images/travel.JPG" height="160" /></a>
-            <a class="btn btn-primary center-block" role="button" (click)="addAlert()">Choose</a>
+            <a (click)="addInfo()"> <img src="/src/images/travel.JPG" height="160" /></a>
+            <a class="btn btn-primary center-block" role="button" (click)="addInfo()">Choose</a>
+        </div>
+    </div>
+</div>
+<button id="openBank" [hidden]="true" (click)="lgModal.show()">Large modal</button>
+<div bsModal #lgModal="bs-modal" class="modal fade" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Narclay's International Bank</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6"> <img src="/src/images/narclayslogo.png" class="img-responsive">
+                        </div>
+                        <div class="col-md-6">
+                            <hr />
+                            <p class="lead text-center"> Narclay's International Bank</p>
+                            <p class="text-center">We love money!</p>
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="well">
+                                <form id="loginForm" method="POST" action="*" novalidate="novalidate">
+                                    <div class="form-group">
+                                        <label class="control-label">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com" (keyup.enter)="checkPassword()" [(ngModel)]="userbx">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" (keyup.enter)="checkPassword()" [(ngModel)]="passbx">
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" id="remember"> Remember login
+                                        </label>
+                                        <p class="help-block">(if this is a private computer)</p>
+                                    </div>
+                                    <a class="btn btn-success btn-block" role="button" (click)="checkPassword()">Login</a>
+                                    <a (click)="addAlert()" class="btn btn-default btn-block">Help to login</a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="lead">Open your account today for <span class="text-success">FREE</span></p>
+                            <ul class="list-unstyled" style="line-height: 2">
+                                <li><span class="fa fa-check text-success"></span> See your money disappear in real time</li>
+                                <li><span class="fa fa-check text-success"></span> Zero online banking protection</li>
+                                <li><span class="fa fa-check text-success"></span> Unclear account charges and fees</li>
+                                <li><span class="fa fa-check text-success"></span> Complex & expensive financial products</li>
+                                <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                                <li><a (click)="addAlert()"><u>Read more</u></a></li>
+                            </ul>
+                            <p><a (click)="addAlert()" class="btn btn-info btn-block">Open acount now!</a></p>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                        <alert *ngFor="let alert of alerts;let i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
+                            {{ alert?.msg }}
+                        </alert>
+                    </div>
+                </footer>
+            </div>
         </div>
     </div>
 </div>
