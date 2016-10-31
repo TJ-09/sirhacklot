@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { AdviceComponent } from './advice/advice.component';
-import { BankComponent } from './bank/bank.component';
 import { CharComponent } from './char/char.component';
 import { FacebookComponent } from './facebook/facebook.component';
 import { InstaComponent } from './insta/insta.component';
@@ -21,7 +20,6 @@ import { RootService } from './root/root.service';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'advice', component: AdviceComponent },
-    { path: 'bank', component: BankComponent },
     { path: 'char', component: CharComponent },
     { path: 'facebook', component: FacebookComponent },
     { path: 'insta', component: InstaComponent },

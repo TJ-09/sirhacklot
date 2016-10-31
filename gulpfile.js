@@ -21,7 +21,12 @@ var paths = {
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/core-js/client/shim.js',
         'node_modules/zone.js/dist/zone.js',
-        'node_modules/reflect-metadata/Reflect.js'
+        'node_modules/reflect-metadata/Reflect.js',
+        'node_modules/ng2-sidebar/lib/index.js',
+        'node_modules/moment/moment.js',
+        'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+        'node_modules/primeng',
+        'node_modules/ng2-webstorage'
     ],
     systemjsConfig: 'src/systemjs.config.js',
     css: [
@@ -42,13 +47,12 @@ function minifyTemplate(path, ext, file, cb) {
             removeRedundantAttributes: true
         });
         cb(null, minifiedFile);
-    }
-    catch (err) {
+    } catch (err) {
         cb(err);
     }
 }
 
-gulp.task('inject:index', function () {
+gulp.task('inject:index', function() {
     var target = gulp.src('src/index.html');
 
     var sources = gulp.src([
@@ -61,7 +65,7 @@ gulp.task('inject:index', function () {
         .pipe(gulp.dest(paths.prod));
 });
 
-gulp.task('tsc', function () {
+gulp.task('tsc', function() {
     return gulp.src(['src/**/*.ts'])
         .pipe(plugins.sourcemaps.init())
         .pipe(tsProject())
@@ -70,7 +74,7 @@ gulp.task('tsc', function () {
         .pipe(plugins.connect.reload());
 });
 
-gulp.task('inline-ng2-templates', function () {
+gulp.task('inline-ng2-templates', function() {
     return gulp.src(['src/**/*.ts'])
         .pipe(inlineNg2Template({ base: 'src', UseRelativePaths: true, indent: 0, removeLineBreaks: true, templateProcessor: minifyTemplate }))
         .pipe(tsProject())
@@ -153,7 +157,7 @@ gulp.task('connect:dev', function() {
     });
 });
 
-gulp.task("watch", function () {
+gulp.task("watch", function() {
     gulp.watch(['src/**/*.ts'], ['tsc']);
-    gulp.watch(['src/**/*.html', 'src/**/*.css',  'src/**/*.js'], ['copy:assets']);
+    gulp.watch(['src/**/*.html', 'src/**/*.css', 'src/**/*.js'], ['copy:assets']);
 });

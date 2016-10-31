@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'phish',
-  //  styleUrls: ['./app/phish/paper-bootstrap-wizard.css'],
- //  encapsulation: ViewEncapsulation.Native,
     templateUrl: './app/phish/phish.component.html'
 })
 

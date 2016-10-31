@@ -7,7 +7,6 @@ import { routing, appRoutingProviders } from './app.routing';
 // the below are the pages that we will cycle the users through
 import { HomeComponent } from './home/home.component';
 import { AdviceComponent } from './advice/advice.component';
-import { BankComponent } from './bank/bank.component';
 import { CharComponent } from './char/char.component';
 import { FacebookComponent } from './facebook/facebook.component';
 import { InstaComponent } from './insta/insta.component';
@@ -42,7 +41,6 @@ import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
         AppComponent,
         HomeComponent,
         AdviceComponent,
-        BankComponent,
         CharComponent,
         FacebookComponent,
         InstaComponent,
