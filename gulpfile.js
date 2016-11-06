@@ -25,12 +25,13 @@ var paths = {
         'node_modules/ng2-sidebar/lib/index.js',
         'node_modules/moment/moment.js',
         'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
-        'node_modules/primeng',
+        'node_modules/primeng/primeng.js',
         'node_modules/ng2-webstorage'
     ],
     systemjsConfig: 'src/systemjs.config.js',
     css: [
         'node_modules/bootstrap/dist/css/bootstrap.css',
+        'node_modules/primeng/primeng/resources/primeng.min.css',
         'src/css/main.css'
     ],
     prod: 'dist/prod/',

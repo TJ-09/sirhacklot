@@ -20,17 +20,20 @@ a:hover {
     text-decoration: underline;
 }
 
-.header-container, .main-container, .footer-container {
+.header-container,
+.main-container,
+.footer-container {
     width: 700px;
     margin: 0 auto;
 }
 
 .main-container {
     margin-bottom: 20px;
-    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 }
 
-.main-container .resource, .main-container h3 {
+.main-container .resource,
+.main-container h3 {
     padding: 16px 23px;
 }
 
@@ -51,4 +54,13 @@ a:hover {
 
 .main-container p {
     margin: 0;
+}
+
+.vertical-center {
+    min-height: 100%;
+    /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh;
+    /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
 }

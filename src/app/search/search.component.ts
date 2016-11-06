@@ -8,6 +8,9 @@ import { GrowlModule } from 'primeng/primeng';
 import { DialogModule } from 'primeng/primeng';
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { ModalDirective } from 'ng2-bootstrap/ng2-bootstrap';
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { Search } from './search';
+
 
 @Component({
     selector: 'search',
@@ -19,7 +22,8 @@ export class SearchComponent {
 
     constructor(private storage:LocalStorageService, private confirmationService: ConfirmationService, private router: Router) {}
 
-searchVar = '';
+public searchVar = '';
+
 character; // this stores the selected character
 
 // when the component loads get the char from the local storage
@@ -59,7 +63,10 @@ info: Message[] = [];
         this.info = [];
         this.info.push({severity:'info', summary:'Help', detail:"Try searching your victim's name"});
     }
-
+    showWarn() {
+        this.info = [];
+        this.info.push({severity:'error', summary:'Server Error', detail:'That page cannot be displayed'});
+    }
 
 
       public alerts:Array<Object> = [];
@@ -71,4 +78,92 @@ info: Message[] = [];
   public addAlert():void {
     this.alerts.push({msg: "I didn't see anything in our notes about that organisation...try another or close this box and do more research", type: 'danger', closable: true});
   }
+
+searchBox: string = '';
+
+
+    searchClick() {
+this.searchVar = 'load'
+var lowerSearch = this.model.name.toLowerCase().trim();
+
+setTimeout(() =>{
+if(lowerSearch === 'tony tonne') {
+this.searchVar = 'tony'
+} else{
+    if(lowerSearch === 'sarah gabriel') {
+  this.searchVar = 'sarah'
+    }
+    else {
+        if(lowerSearch === 'joe merlin') {
+     this.searchVar = 'joe'
+        }else{
+          this.searchVar = 'no'
+        }
+    }
+}
+},1000);
+    }
+
+
+    tonyTw() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'tonyTW'
+},500);
+    }
+
+    tonyFb() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'tonyFB'
+},500);
+    }
+    tonyBack() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'tony'
+},500);
+    }
+
+    sarahTw() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'sarahTW'
+},500);
+    }
+
+    sarahFb() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'sarahFB'
+},500);
+    }
+    sarahBack() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'sarah'
+},500);
+    }
+
+    joeTw() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'joeTW'
+},500);
+    }
+    joeFb() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'joeFB'
+},500);
+    }
+    joeBack() {
+        this.searchVar = 'load'
+setTimeout(() =>{
+        this.searchVar = 'joe'
+},500);
+    }
+
+  public model = new Search(18, '','Chuck Overstreet');
+
 }

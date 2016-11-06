@@ -18,7 +18,7 @@ export class SuccessComponent {
 
  }
 
-
+pause: string = 'doing';
 
 	//for temp stprage of the char name
 character;
@@ -54,6 +54,12 @@ this.charPassword = 'ilovepuppies'
         this.charPassword = 'burnbabyburn'
       }
     }
+
+
+setTimeout(() =>{
+        this.pause = 'done'
+},2000);
+
 }
 
 

@@ -18,7 +18,9 @@
         'moment': 'node_modules/moment/moment.js',
         'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
         'primeng': 'node_modules/primeng',
-        'ng2-webstorage': 'node_modules/ng2-webstorage'
+        'ng2-webstorage': 'node_modules/ng2-webstorage',
+        'ng2-pdf-viewer': 'node_modules/ng2-pdf-viewer',
+        'pdfjs-dist': 'node_modules/pdfjs-dist'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -26,7 +28,9 @@
         app: { main: 'main.js', defaultExtension: 'js' },
         rxjs: { defaultExtension: 'js' },
         'ng2-webstorage': { main: 'bundles/core.umd.js', defaultExtension: 'js' },
-        'primeng': { defaultExtension: 'js' }
+        'primeng': { defaultExtension: 'js' },
+        'ng2-pdf-viewer': { main: 'dist/index.js', defaultExtension: 'js' },
+        'pdfjs-dist': { defaultExtension: 'js' }
     };
 
     var config = {

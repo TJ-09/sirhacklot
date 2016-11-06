@@ -110,7 +110,7 @@ characterId;
 
 //to confirm if you want to move on
 //variable so it is public for the below method
-combined; string;
+combined;
     confirm2() {
         this.confirmationService.confirm({
             message: 'Are you sure you are happy with your phishing email above?',
@@ -136,7 +136,7 @@ msgs: Message[] = [];
 
     showWarn() {
         this.msgs = [];
-        this.msgs.push({severity:'warn', summary:"You Don't want to do that!", detail:"That is our evil link! You don't want to steal your own password!"});
+        this.msgs.push({severity:'warn', summary:"Don't do that!", detail:"That is our evil link! You don't want to steal your own password!"});
     }
 
 

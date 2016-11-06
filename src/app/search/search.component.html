@@ -16,13 +16,13 @@
 <button type="button" class="btn btn-info btn-lg btn-block" (click)="_toggleSidebar()">Open Notepad</button>
 <hr />
 <div class="container">
-    <img src="/src/images/Noogle.png" height="300" width="675" />
+    <img src="/src/images/Noogle.png" height="300" width="675" class="img-responsive" />
     <form>
         <div class="form-group">
             <div class="input-group">
-                <input #box type="text" class="form-control" (keyup.enter)="searchVar=box.value">
+                <input type="text" class="form-control" id="searchBox" [(ngModel)]="model.name" name="name" (keyup.enter)="searchClick()">
                 <span class="input-group-btn">
-                  <button class = "btn btn-default" type="button" (click)="searchVar=box.value">
+                  <button class = "btn btn-default" type="button" (click)="searchClick()">
                      Search
                   </button>
                </span>
@@ -31,42 +31,92 @@
     </form>
 </div>
 <div class="row marketing" [ngSwitch]="searchVar">
-    <div class="col-lg-6" *ngSwitchCase="'Tony'">
-        <h4>Tony Stuff</h4>
-        <a routerLink="/twitter">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
-        <h4>Tony Stuff2</h4>
-        <a routerLink="/phish">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
-        <h4>Tony Stuff3</h4>
-        <a href="#">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    <div class="col-md-12" *ngSwitchCase="'tony'">
+        <h4><a (click)="tonyTw()">Tony Tonne on Twitter</a></h4>
+        <p>The latest Tweets from Tony Tonne (@TonyBigWeights). Follow for the latest from the big man Tony Tonne. For tweets from the gym and weights room, ...</p>
+        <hr />
+        <h4><a (click)="showWarn()">Tony Galento - Wikipedia</a></h4>
+        <p>Domenico Antonio Galento (March 12, 1910 – July 22, 1979) was an American heavyweight boxer. Nicknamed "Two Ton" for his reasoning to his manager for ...</p>
+        <hr />
+        <h4><a (click)="showWarn()">Videos about “tony tonne” on Vimeo</a></h4>
+        <p>There are 3 videos about “tony tonne” on Vimeo, the home for high quality videos and the people who love them.</p>
+        <hr />
+        <h4><a (click)="tonyFb()">Tony Tonne Facebook Page</a></h4>
+        <p>Tony Tonne is on Facebook. Join Facebook to connect with Tony Tonne and others you may know. Facebook gives people the power to share and makes the world...</p>
+        <hr />
+        <h4><a (click)="showWarn()">tony tony tonne - YouTube</a></h4>
+        <p>tony tony tonne. SubscribeSubscribedUnsubscribe 0. Loading... Loading... Working... This channel doesn't have any content. Language: English; Country: ...</p>
     </div>
-    <div class="col-lg-6" *ngSwitchCase="'Joe'">
-        <h4>Joe Stuff</h4>
-        <a href="#">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
-        <h4>Joe Stuff2</h4>
-        <a href="#">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
-        <h4>Joe Stuff3</h4>
-        <a href="#">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    <div class="col-md-12" *ngSwitchCase="'joe'">
+        <h4><a (click)="joeTw()">Joe Merlin on Twitter</a></h4>
+        <p>The latest Tweets from Joe Merlin (@Jo1234_Merlin). Follow for the latest from the master wizzard and all round good guy. For tweets from the President, ...</p>
+        <hr />
+        <h4><a (click)="showWarn()">Job search + apply - Merlin Entertainments Group - Serious about fun</a></h4>
+        <p>Welcome to Merlin Careers - Find out more about us and our career opportunities.</p>
+        <hr />
+        <h4><a (click)="showWarn()">Mission For The Universe - Google Books Result</a></h4>
+        <p>Mary pointed her index in turn to herself, to Jo and then to the machine stating, “Mary, Jo, Merlin.” She got up and repeated three times “Merlin”, her finger placed...</p>
+        <hr />
+        <h4><a (click)="joeFb()">Joe Merlin Facebook Page</a></h4>
+        <p>Merlin Jo is on Facebook. Join Facebook to connect with Merlin Jo and others you may know. Facebook gives people the power to share and makes the world...</p>
+        <hr />
+        <h4><a (click)="showWarn()">Flipagram by jo-merlin featuring #Matando a Puta[MG] by Created in ...</a></h4>
+        <p>View jo-merlin's Flipagram created on 05/13/2015 featuring #Matando a Puta[MG] by Created in Messenger Plus!...</p>
     </div>
-    <div class="col-lg-6" *ngSwitchCase="'Sarah'">
-        <h4>Sarah Stuff</h4>
-        <a href="#">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
-        <h4>Sarah Stuff2</h4>
-        <a href="#">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
-        <h4>Sarah Stuff3</h4>
-        <a href="#">linkaddresswitha.com</a>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentu m nibh, ut fermentum massa justo sit amet risus.</p>
+    <div class="col-md-12" *ngSwitchCase="'sarah'">
+        <h4><a (click)="sarahTw()">Sarah Gabriel on Twitter</a></h4>
+        <p>The latest Tweets from Sarah Gabriel (@AngelGabz123). Follow for the latest from the one and only Angel Gabzs. For tweets from the dragon and, ...</p>
+        <hr />
+        <h4><a (click)="showWarn()">People diary: soprano proves a plane dresser - Telegraph</a></h4>
+        <p>After a working weekend in Pau, south-west France, British soprano Sarah Gabriel faced paying excess baggage fees on her return to London, ...</p>
+        <hr />
+        <h4><a (click)="showWarn()">Raphaelle Photography | Sarah Gabriel – soprano</a></h4>
+        <p>... tenor · Sarah Walker CBE · Louise Walsh · Ben Wragg · the shoot · video · FAQ · press · rates · testimonials · contact. Sarah Gabriel. soprano. Scroll to top.</p>
+        <hr />
+        <h4><a (click)="sarahFb()">Sarah Gabriel Facebook Page</a></h4>
+        <p>Sarah Gabriel is on Facebook. Join Facebook to connect with Sarah Gabriel and others you may know. Facebook gives people the power to share and makes the world...</p>
+        <hr />
+        <h4><a (click)="showWarn()">BBC Radio 3 - In Tune, Sarah Gabriel, Viv Mclean, Marmen Quartet ...</a></h4>
+        <p>With live music from soprano Sarah Gabriel, pianist Viv Mclean and the Marmen Quartet.</p>
     </div>
-    <div class="col-lg-6" *ngSwitchDefault>
+    <div class="col-md-12" *ngSwitchCase="'joeFB'">
+        <a class="btn btn-block btn-default btn-sm" (click)="joeBack()"><i class="fa fa-backward fa-fw"></i>Back to results</a>
+        <br>
+        <pdf-viewer src="/src/pdf/JoMerlinFB.pdf" style="display: block;"></pdf-viewer>
+    </div>
+    <div class="col-md-12" *ngSwitchCase="'joeTW'">
+        <a class="btn btn-block btn-default btn-sm" (click)="joeBack()"><i class="fa fa-backward fa-fw"></i>Back to results</a>
+        <br>
+        <pdf-viewer src="/src/pdf/JoMerlinTW.pdf" style="display: block;"></pdf-viewer>
+    </div>
+    <div class="col-md-12" *ngSwitchCase="'sarahFB'">
+        <a class="btn btn-block btn-default btn-sm" (click)="sarahBack()"><i class="fa fa-backward fa-fw"></i>Back to results</a>
+        <br>
+        <pdf-viewer src="/src/pdf/SarahGabrielFB.pdf" style="display: block;"></pdf-viewer>
+    </div>
+    <div class="col-md-12" *ngSwitchCase="'sarahTW'">
+        <a class="btn btn-block btn-default btn-sm" (click)="sarahBack()"><i class="fa fa-backward fa-fw"></i>Back to results</a>
+        <br>
+        <pdf-viewer src="/src/pdf/SarahGabrielTW.pdf" style="display: block;"></pdf-viewer>
+    </div>
+    <div class="col-md-12" *ngSwitchCase="'tonyFB'">
+        <a class="btn btn-block btn-default btn-sm" (click)="tonyBack()"><i class="fa fa-backward fa-fw"></i>Back to results</a>
+        <br>
+        <pdf-viewer src="/src/pdf/TonnyTonneFB.pdf" style="display: block;"></pdf-viewer>
+    </div>
+    <div class="col-md-12" *ngSwitchCase="'tonyTW'">
+        <a class="btn btn-block btn-default btn-sm" (click)="tonyBack()"><i class="fa fa-backward fa-fw"></i>Back to results</a>
+        <br>
+        <pdf-viewer src="/src/pdf/TonnyTonneTW.pdf" style="display: block;"></pdf-viewer>
+    </div>
+    <div class="col-md-12" *ngSwitchCase="'load'">
+        <i class="fa fa-spinner fa-spin" style="font-size:48px"></i>
+    </div>
+    <div class="col-md-12" *ngSwitchCase="'no'">
         <h4>No Results Found</h4>
         <button type="button" class="btn btn-info" (click)="showInfo()">Click here for help</button>
+    </div>
+    <div class="col-md-12" *ngSwitchDefault>
     </div>
 </div>
 <button id="openModalButton" [hidden]="true" (click)="lgModal.show()">Large modal</button>
