@@ -26,7 +26,8 @@ var paths = {
         'node_modules/moment/moment.js',
         'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
         'node_modules/primeng/primeng.js',
-        'node_modules/ng2-webstorage'
+        'node_modules/ng2-webstorage',
+        'node_modules/ng2-pdf-viewer'
     ],
     systemjsConfig: 'src/systemjs.config.js',
     css: [
