@@ -6,10 +6,12 @@
 <p-confirmDialog header="Are you sure you want to proceed?" icon="fa fa-warning" width="425"></p-confirmDialog>
 <div class="jumbotron">
     <h1>Contruct a Phishing email</h1>
-    <p class="lead">Now we must construct an email to trick {{ character }} so that they click on our evil link which will capture their password!</p>
-    <p>Fill out the boxes below using the information that you have found from your research that you think will work on {{ character }}.</p>
+    <img class="img-responsive" src="/src/images/phishingtoon.png" />
+    <hr />
+    <p class="lead">Now we must construct an email to trick {{ character }} so they click our evil link which will capture their email and password for First Pet!</p>
+    <p>Our hacker friends have made a start but need help!</p>
+    <p>Select the information that you have found from your research that will trick {{ character }}.</p>
 </div>
-<button type="button" class="btn btn-info btn-lg btn-block" (click)="_toggleSidebar()">Open Notepad</button>
 <hr />
 <div>
     <div class="well">
@@ -41,7 +43,7 @@
                         <td>
                             <p style="margin-bottom: 15px;">Hi {{ character }},</p>
                             <p style="margin-bottom: 15px;">Just a reminder that it’s time to bring your {{selectedOption2 ? selectedOption2.name : '????'}} {{selectedOption3 ? selectedOption3.name : '????'}} in for their next set on injections.</p>
-                            <p style="margin-bottom: 15px;">Please click the button below to use our online system book your next appointment with {{selectedOption4 ? selectedOption4.name : '????'}}.</p>
+                            <p style="margin-bottom: 15px;">Please click the button below to use the online system to book your next appointment with {{selectedOption4 ? selectedOption4.name : '????'}}.</p>
                             <p></p>
                             <button type="button" class="btn btn-success" (click)="showWarn()">Book Here</button>
                             <p></p>
@@ -56,6 +58,8 @@
         </div>
     </div>
 </div>
+<hr />
+<button type="button" class="btn btn-info btn-lg btn-block" (click)="_toggleSidebar()">Open Notepad</button>
 <hr />
 <div class="well well-lg" [ngSwitch]="steps">
     <p-progressBar [value]="value5"></p-progressBar>
@@ -113,7 +117,7 @@
     </div>
     <div class="row marketing " *ngSwitchCase="5 ">
         <h3 class="first ">Finished!</h3>
-        <p> Your evil hacker friends have created an exploit that will steal {{ character }}'s password <i>if</i> they click the link in your carefully crafted email!</p>
+        <p> Your evil hacker friends have created an exploit that will steal {{ character }}'s email and password <i>if</i> they click the link in your carefully crafted email!</p>
         <p> Let's hope it works!</p>
         <div class="btn-group " role="group ">
             <button class="btn btn-success btn-block " type="button " (click)="checkPhish() ">Send Phishing Email <i class="fa fa-forward fa-lg "></i></button>

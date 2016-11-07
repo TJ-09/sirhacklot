@@ -6,8 +6,8 @@
 <p-confirmDialog header="Are you sure you want to proceed?" icon="fa fa-warning" width="425"></p-confirmDialog>
 <div class="jumbotron">
     <h1>Research {{ character }}</h1>
-    <p class="lead">Use the google search below to find information about {{ character }}.</p>
-    <p class="lead"> Open the notepad to make notes found in your research</p>
+    <p class="lead">Use Noogle search below to find information about {{ character }}.</p>
+    <p class="lead"> Make notes from your research. You will need it later!</p>
     <p class="lead"> Once you have enough information on {{ character }} click the proceed button</p>
 </div>
 <hr />
@@ -32,6 +32,8 @@
 </div>
 <div class="row marketing" [ngSwitch]="searchVar">
     <div class="col-md-12" *ngSwitchCase="'tony'">
+        <h2><u>Search Results</u></h2>
+        <hr />
         <h4><a (click)="tonyTw()">Tony Tonne on Twitter</a></h4>
         <p>The latest Tweets from Tony Tonne (@TonyBigWeights). Follow for the latest from the big man Tony Tonne. For tweets from the gym and weights room, ...</p>
         <hr />
@@ -107,7 +109,7 @@
     <div class="col-md-12" *ngSwitchCase="'tonyTW'">
         <a class="btn btn-block btn-default btn-sm" (click)="tonyBack()"><i class="fa fa-backward fa-fw"></i>Back to results</a>
         <br>
-        <pdf-viewer src="/src/pdf/TonnyTonneTW.pdf" style="display: block;"></pdf-viewer>
+        <pdf-viewer src="/src/pdf/TonyTonneTW.pdf" style="display: block;"></pdf-viewer>
     </div>
     <div class="col-md-12" *ngSwitchCase="'load'">
         <i class="fa fa-spinner fa-spin" style="font-size:48px"></i>

@@ -23,10 +23,13 @@ pause: string = 'doing';
 	//for temp stprage of the char name
 character;
 characterId;
+helpmsg:string
 
   show: boolean = false;
 password: string = '****************';
 charPassword:string;
+charEmail:string;
+
 
   showPassword() {
     this.show = !this.show
@@ -54,7 +57,19 @@ this.charPassword = 'ilovepuppies'
         this.charPassword = 'burnbabyburn'
       }
     }
+      if(this.characterId === '1'){
+this.charEmail = 'tony@bigweights.com'
+      }
+   else{
+     if(this.characterId === '2') {
+this.charEmail = 'joe@loneywizards.net'
+      }
+      else {
+        this.charEmail = 'sarh@fluffyclouds.com'
+      }
+    }
 
+this.helpmsg = this.character + "'s Email: " + this.charEmail +"  Password: " + this.charPassword
 
 setTimeout(() =>{
         this.pause = 'done'
@@ -68,7 +83,7 @@ info: Message[] = [];
 
     addInfo() {
         this.info = [];
-        this.info.push({severity:'error', summary:'You have one shot!', detail:"Pick your target better as we might only have one shot at this!"});
+        this.info.push({severity:'error', summary:'Clever Clogs', detail:"Did you really think that is the best option?"});
     }
 
     openBank() {
@@ -95,6 +110,10 @@ info: Message[] = [];
 
   public addAlert():void {
     this.alerts.push({msg: "Narclay's servers are not currently working so we are unable to process your request. Your money is safe trust us!", type: 'danger', closable: true});
+  }
+
+    public addHelp():void {
+    this.alerts.push({msg: this.helpmsg, type: 'info', closable: true});
   }
 
   userbx: string;

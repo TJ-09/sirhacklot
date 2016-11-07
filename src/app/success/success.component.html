@@ -19,23 +19,30 @@
     <div *ngSwitchCase="'done'">
         <div class="jumbotron">
             <h1>Success!</h1>
+            <img class="img-responsive center-block" src="/src/images/win.png" />
         </div>
         <div class="container">
             <div class="row">
-                <p class="lead">{{ character }} clicked the link in your phishing email and our evil code successful captured their password for us</p>
-                <p class="lead">Click the link below to see the password!</p>
+                <p class="lead">{{ character }} clicked the link in your phishing email and our evil code successful captured their email and password for us!</p>
             </div>
         </div>
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ character }}'s Email</div>
             <div class="panel-body">
-                {{password}}
+                {{ charEmail }}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ character }}'s Password</div>
+            <div class="panel-body">
+                {{ password }}
             </div>
         </div>
         <button type="button" class="btn btn-info btn-block" (click)="showPassword()">Show Password</button>
         <hr />
         <div class="container">
             <div class="row">
-                <p class="lead">Now that we have {{ character }}'s password we must choose where the best place to use it is.</p>
+                <p class="lead">Now that we have {{ character }}'s password for First Pet we must choose where the best place to use it and hope he uses the same password elsewhere.</p>
                 <p class="lead">Click on the organisation below to see if we can steal some money from {{character}}</p>
             </div>
             <hr />
@@ -113,7 +120,7 @@
                                 <li><span class="fa fa-check text-success"></span> See your money disappear in real time</li>
                                 <li><span class="fa fa-check text-success"></span> Zero online banking protection</li>
                                 <li><span class="fa fa-check text-success"></span> Unclear account charges and fees</li>
-                                <li><span class="fa fa-check text-success"></span> Complex & expensive financial products</li>
+                                <li><span class="fa fa-check text-success"></span> Complex + expensive financial products</li>
                                 <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
                                 <li><a (click)="addAlert()"><u>Read more</u></a></li>
                             </ul>
@@ -121,6 +128,7 @@
                         </div>
                     </div>
                 </div>
+                <a class="btn btn-info btn-xs" (click)="addHelp()">Remind me<i class="fa fa-question-circle fa-fw"></i></a>
                 <footer>
                     <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
                         <alert *ngFor="let alert of alerts;let i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">

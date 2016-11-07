@@ -6,7 +6,6 @@ import { routing, appRoutingProviders } from './app.routing';
 
 // the below are the pages that we will cycle the users through
 import { HomeComponent } from './home/home.component';
-import { AdviceComponent } from './advice/advice.component';
 import { CharComponent } from './char/char.component';
 import { JailComponent } from './jail/jail.component';
 import { NoteAppComponent } from './notepad/notepad.component';
@@ -26,7 +25,6 @@ import { PdfViewerComponent } from 'ng2-pdf-viewer';
     declarations: [
         AppComponent,
         HomeComponent,
-        AdviceComponent,
         CharComponent,
         JailComponent,
         NoteAppComponent,
